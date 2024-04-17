@@ -24,12 +24,12 @@ public class Group11TestNGTest {
 
     @BeforeMethod
     public void beforeTest() {
-        System.out.println(ANSI_YELLOW + "BeforeMethod - Runs before each test." + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "BeforeMethod - Runs before each test." + ANSI_RESET);
     }
 
     @AfterMethod
     public void afterTest() {
-        System.out.println(ANSI_YELLOW + "AfterMethod - Runs after each test." + ANSI_RESET);
+        System.out.println(ANSI_BLUE+ "AfterMethod - Runs after each test." + ANSI_RESET);
     }
 
     @Test()
