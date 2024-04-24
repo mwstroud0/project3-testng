@@ -1,0 +1,15 @@
+<suite name = "Suite1">
+
+    <test name = "demotest1">
+        <classes>
+            <class name = "org.test.Group11TestNGTest" />
+        </classes>
+    </test>
+
+    <test name = "demotest2">
+        <classes>
+            <class name = "org.test.Group11TestNGTest2" />
+        </classes>
+    </test>
+
+</suite>
