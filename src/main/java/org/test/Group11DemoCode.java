@@ -1,5 +1,7 @@
 package org.test;
 
+import java.util.concurrent.TimeUnit;
+
 // --------------------
 // GROUP 11 DEMO CODE
 // --------------------
@@ -7,31 +9,19 @@ package org.test;
 public class Group11DemoCode {
 
     private int count = 50;
+    private String message = "Goodbye World";
 
-    public static int demoReturnSquare(int num){
-        return num * num;
-    }
-
-    public static String demoMessage(String message){
-        return "Hello, " + message;
-    }
-
-    public static int squareThreeTimes(int num){
-        return demoReturnSquare(demoReturnSquare(demoReturnSquare(num)));
-    }
-
-    public static int longRuntime(int num){
-        for(int i=0; i < 1000000000; i++){
-            num++;
-        }
-        return 2;
-    }
-
-    public void incrementCount(){
-        this.count++;
+    public static int longRuntime(int num) throws InterruptedException {
+        System.out.println("LONG RUNTIME");
+        TimeUnit.SECONDS.sleep(2);
+        return num;
     }
 
     public int getCount(){
         return this.count;
+    }
+
+    public String getMessage(){
+        return this.message;
     }
 }

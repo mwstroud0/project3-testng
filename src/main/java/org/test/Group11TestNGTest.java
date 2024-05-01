@@ -10,10 +10,8 @@ public class Group11TestNGTest {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
 
     // ------------------------------
     // BEFORE and AFTER TESTS
@@ -71,17 +69,17 @@ public class Group11TestNGTest {
     // --------------------------------------------------------------------------------------------------
     // FAILING
 
-    @Test(priority = 2,timeOut= 10) // IN MILLISECONDS
-    public void longRuntime_FAIL() {
+    @Test(priority = 2,timeOut= 100) // IN MILLISECONDS
+    public void longRuntime_FAIL() throws InterruptedException {
         System.out.println(ANSI_RED + "FAIL long runtime" + ANSI_RESET);
-        Assert.assertNotEquals(Group11DemoCode.longRuntime(1),2);
+        int result = Group11DemoCode.longRuntime(2);
+        Assert.assertNotEquals(result,2);
     }
 
     @Test(priority = 2) // IN MILLISECONDS
     public void reliableGetCount_FAIL() {
-        System.out.println(ANSI_GREEN + "Incrementing the count to 51." + ANSI_RESET);
-        demoCode.incrementCount();
-        Assert.assertEquals(demoCode.getCount(),50);
+        System.out.println(ANSI_GREEN + "Checking if demo object says Hello World" + ANSI_RESET);
+        Assert.assertEquals(demoCode.getMessage(),"Hello World");
     }
 
     @Test(priority = 2)
